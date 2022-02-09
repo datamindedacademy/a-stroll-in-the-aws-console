@@ -11,13 +11,13 @@ You will build the toy data exploration environment with the following AWS servi
 
 ### S3
 
-1. Create an S3 bucket with a unique name, e.g. `a-stroll-in-the-aws-console-q7v`. You should not enable versioning of objects, but do make sure that the objects in the bucket are encrypted by default. AWS managed encryption is OK, but feel free to create your own keys with the AWS KMS service. Tag your bucket with the key-value pair `class: September2021`.
+1. Create an S3 bucket with a unique name, e.g. `a-stroll-in-the-aws-console-q7v`. You should not enable versioning of objects, but do make sure that the objects in the bucket are encrypted by default. AWS managed encryption is OK, but feel free to create your own keys with the AWS KMS service. Tag your bucket with the key-value pair `class: DataMindedAcademy`.
 2. Upload some data (can be anything... If you don't have any inspiration, have a look at the [awesome-public-datasets repo](https://github.com/awesomedata/awesome-public-datasets)) to the bucket 
 
 
 ### VPC
 
-1. Create a Virtual Private Cloud in the `eu-west-1` region (in case the class is large, you can use other regions as well to avoid hitting AWS service quotas). You have to specify the CIDR range of the VPC, i.e. the private IP addresses that will be available within your VPC. Choose any range that is large enough for at least two subnets (e.g. `10.1.0.0/24`). Make sure to tag your VPC with the key-value pair `class: September2021`. 
+1. Create a Virtual Private Cloud in the `eu-west-1` region (in case the class is large, you can use other regions as well to avoid hitting AWS service quotas). You have to specify the CIDR range of the VPC, i.e. the private IP addresses that will be available within your VPC. Choose any range that is large enough for at least two subnets (e.g. `10.1.0.0/24`). Make sure to tag your VPC with the key-value pair `class: DataMindedAcademy`. 
 2. Create a public subnet within the VPC, i.e. a subnet which has a route table with a route entry to an Internet Gateway. Tag all the resources that you create (subnet, route table, internet gateway) with the same key-value pair as above. 
 3. Create a default security group within your VPC that allows all traffic. Don't forget to tag it!
 
